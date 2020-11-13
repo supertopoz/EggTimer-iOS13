@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,6 +122,21 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="346" width="288" height="134"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="IwM-Qr-ud5">
+                                                <rect key="frame" x="0.0" y="62" width="288" height="11"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="XZp-lQ-da7"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor"/>
+                                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="IwM-Qr-ud5" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="4IT-xC-Zhw"/>
+                                            <constraint firstAttribute="trailing" secondItem="IwM-Qr-ud5" secondAttribute="trailing" id="9bm-TO-Csi"/>
+                                            <constraint firstItem="IwM-Qr-ud5" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="RPB-WH-oO4"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -135,6 +151,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="IwM-Qr-ud5" id="LRg-i5-qmO"/>
                         <outlet property="titleLabel" destination="XLm-5r-pSP" id="xJv-y4-rMa"/>
                     </connections>
                 </viewController>
@@ -147,5 +164,8 @@
         <image name="hard_egg" width="287.5" height="366"/>
         <image name="medium_egg" width="288" height="363"/>
         <image name="soft_egg" width="287" height="365"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
