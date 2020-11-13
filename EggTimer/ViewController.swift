@@ -39,6 +39,8 @@ class ViewController: UIViewController {
             } else {
                 self.timer?.invalidate()
                 self.setTitle("Done!")
+                self.secondsPassed = 0
+                self.totalTime = 0
                 self.ringBell()
             }
         }
